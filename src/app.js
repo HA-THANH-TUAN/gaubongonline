@@ -3,16 +3,14 @@ const bodyParser = require('body-parser')
 const app = express()
 const path = require('path');
 const routerUser = require('./routes/api/user.route');
+const routerAuth = require('./routes/api/auth.route')
+const routerRedis = require('./routes/api/test.route')
 const cors=require("./middleware/cors")
 // const {uploadCloud,cloudinary} = require('./config/cloudinary.config');
 // const { urlencodedParser } = require('./middleware/bodyParser');
-// const configDatabase=require("./models/db.model")
-// const connectDatabase=
-
 app.use('/static', express.static(path.join(__dirname, '../public')))
 
 //====> middleware
-app.use(bodyParser.json())
 app.use(cors({
   "origin": "*",
   "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -20,7 +18,10 @@ app.use(cors({
   "optionsSuccessStatus": 204
 }))
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json()); 
+app.use("/authentication",routerAuth)
 app.use("/user",routerUser)
+app.use("/redis",routerRedis)
 
 // app.post("/upload/image",(()=>uploadCloud.single("image"))(),async(req, res)=>{
 //   console.log('>>>:::req' , req.file.path);
@@ -65,12 +66,6 @@ app.use("/user",routerUser)
 // connectD()
 
 // console.log(connectDatabase)
-// connectDatabase.query("SELECT * FROM products", function(err, rows) {
-//     console.log("error:::", err);
-//     console.log("data:::", rows);
-//   })
-  
-  console.log("=====> End" )
 
 
 
