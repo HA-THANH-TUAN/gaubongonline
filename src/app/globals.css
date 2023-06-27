@@ -16,6 +16,20 @@
   }
 }
 
+@layer components{
+  .spinner .spinner-main{
+    animation: spinnerAnimation 1s linear infinite;
+  }
+  @keyframes spinnerAnimation {
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(360deg);
+    }
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
 
