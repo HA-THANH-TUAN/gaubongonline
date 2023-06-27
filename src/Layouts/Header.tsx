@@ -19,8 +19,8 @@ const Header:React.FC = () => {
         <div className='max-w-7xl mx-auto flex justify-between py-2'>
 
             <div className='flex items-center'>
-                <Image width={100} className='w-[80px]' src={logo} alt='logo'/>
-                <p className='text-4xl font-semibold font-nunito text-[#02c4c1]'>Gấu Bông Online</p>
+                <Image width={100} height={100} className='w-[80px]' src={"https://theme.hstatic.net/200000182297/1000887316/14/logo.png?v=636"} alt='logo'/>
+                {/* <p className='text-4xl font-semibold font-nunito text-[#02c4c1]'>Gấu Bông Online</p> */}
             </div>
             <div className='search flex items-center'>
                 <form className='flex rounded '>

@@ -4,9 +4,10 @@ export default function Spinner() {
     useEffect(()=>{
         document.body.style.overflowY="hidden"
         return ()=>{
-            document.body.style.overflowY="inital"
+            console.log("end loading")
+            document.body.style.overflowY="initial"
         }
-    })
+    },[])
   return (
     <div className='spinner fixed top-0 right-0 bg-[#000000da] w-screen h-screen flex justify-center items-center'> 
         <span className="spinner-main" style={{

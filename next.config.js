@@ -2,14 +2,21 @@
 const nextConfig = {
     reactStrictMode: false,
     env: {
-      API_URL:"https://jsonplaceholder.typicode.com/todos/1"
+      API_URL:"http://localhost:3009/"
     },
     images: {
         remotePatterns: [
           {
             protocol: 'https',
-            hostname: 'gaubongonline.vn',
-
+            hostname: 'file.hstatic.net'
+          },
+          {
+            protocol: 'https',
+            hostname: "theme.hstatic.net"
+          },
+          {
+            protocol: 'https',
+            hostname: "product.hstatic.net"
           },
         ],
       },
