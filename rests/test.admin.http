@@ -1,0 +1,20 @@
+get http://localhost:3009/admin/products
+Content-Type: application/json
+# Authorization:Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOGFmNzI1ZjY3NTEyYjk2YjBjOWY2MDIyZWM0YmFkNmI3ZCIsIm5hbWUiOiJIYSBUaGFuaCBUdWFuIiwiZW1haWwiOiJoYXRoYW5odHVhbjEyMy5jb20iLCJyb2xlX2lkIjowLCJpYXQiOjE2ODcwMjk1NjQsImV4cCI6MTY4NzAzNjc2NH0.jEZUJodGICX4WEmkuOVCTQAJijXrZEekokNwQeKl1RmC5_mrBrU6mf5vBKsanyTPwSXQ3A5w75bUOFU_6Vkuvhq_LVGUUK6nYog4HiMa4DjD1Bo5DS300VcOtN6SrIKlZROtSeMVuLWHaIM0EvyDFHyfeMCU5OjKZldYkCo6k-_flLrv8vTbbdR0nV04QSUl0XgUcq0eMAfiyWe_sdQ7RMESOURTaC4VdV1nFcyKR_S-WcnfAxvEKlEN4HcBEUPs6lp2R3o1TdNfM2lh8Ux11SIpFh_oZXD0ywZBPwNRjBvKTT-UzNGNuHrVHgBwGCu9Gp8SNtykfoU0IdbnnNzUkg
+
+{
+    "email": "hathanhtuan123.com",
+    "password": "123456789"
+}
+
+###
+post http://localhost:3009/admin/addCatalog
+Content-Type: application/json
+# Authorization:Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOGFmNzI1ZjY3NTEyYjk2YjBjOWY2MDIyZWM0YmFkNmI3ZCIsIm5hbWUiOiJIYSBUaGFuaCBUdWFuIiwiZW1haWwiOiJoYXRoYW5odHVhbjEyMy5jb20iLCJyb2xlX2lkIjowLCJpYXQiOjE2ODcwMjk1NjQsImV4cCI6MTY4NzAzNjc2NH0.jEZUJodGICX4WEmkuOVCTQAJijXrZEekokNwQeKl1RmC5_mrBrU6mf5vBKsanyTPwSXQ3A5w75bUOFU_6Vkuvhq_LVGUUK6nYog4HiMa4DjD1Bo5DS300VcOtN6SrIKlZROtSeMVuLWHaIM0EvyDFHyfeMCU5OjKZldYkCo6k-_flLrv8vTbbdR0nV04QSUl0XgUcq0eMAfiyWe_sdQ7RMESOURTaC4VdV1nFcyKR_S-WcnfAxvEKlEN4HcBEUPs6lp2R3o1TdNfM2lh8Ux11SIpFh_oZXD0ywZBPwNRjBvKTT-UzNGNuHrVHgBwGCu9Gp8SNtykfoU0IdbnnNzUkg
+
+{
+    "order_number": "hathanhan@gmail.com",
+    "catalog_name": "123456789",
+    "thumbnail":"j",
+    "isActive": 1
+}

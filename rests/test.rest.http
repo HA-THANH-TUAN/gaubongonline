@@ -2,7 +2,51 @@ post http://localhost:3009/authentication/sign-up
 Content-Type: application/json
 
 {
-    "email": "hathanhtuan@gmail.com",
+    "email": "s2hathanhbinh2s@gmail.com",
     "name": "Ha Thanh Tuan",
+    "password": "123456789"
+}
+
+###
+post http://localhost:3009/authentication/sign-in
+Content-Type: application/json
+# Authorization:Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOGFmNzI1ZjY3NTEyYjk2YjBjOWY2MDIyZWM0YmFkNmI3ZCIsIm5hbWUiOiJIYSBUaGFuaCBUdWFuIiwiZW1haWwiOiJoYXRoYW5odHVhbjEyMy5jb20iLCJyb2xlX2lkIjowLCJpYXQiOjE2ODcwMjk1NjQsImV4cCI6MTY4NzAzNjc2NH0.jEZUJodGICX4WEmkuOVCTQAJijXrZEekokNwQeKl1RmC5_mrBrU6mf5vBKsanyTPwSXQ3A5w75bUOFU_6Vkuvhq_LVGUUK6nYog4HiMa4DjD1Bo5DS300VcOtN6SrIKlZROtSeMVuLWHaIM0EvyDFHyfeMCU5OjKZldYkCo6k-_flLrv8vTbbdR0nV04QSUl0XgUcq0eMAfiyWe_sdQ7RMESOURTaC4VdV1nFcyKR_S-WcnfAxvEKlEN4HcBEUPs6lp2R3o1TdNfM2lh8Ux11SIpFh_oZXD0ywZBPwNRjBvKTT-UzNGNuHrVHgBwGCu9Gp8SNtykfoU0IdbnnNzUkg
+
+{
+    "email":"s2hathanhtuan2s@gmail.com",
+    "password": "12356789"
+}
+
+# post http://localhost:3009/authentication/sign-in
+# Content-Type: application/json
+# # Authorization:Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOGFmNzI1ZjY3NTEyYjk2YjBjOWY2MDIyZWM0YmFkNmI3ZCIsIm5hbWUiOiJIYSBUaGFuaCBUdWFuIiwiZW1haWwiOiJoYXRoYW5odHVhbjEyMy5jb20iLCJyb2xlX2lkIjowLCJpYXQiOjE2ODcwMjk1NjQsImV4cCI6MTY4NzAzNjc2NH0.jEZUJodGICX4WEmkuOVCTQAJijXrZEekokNwQeKl1RmC5_mrBrU6mf5vBKsanyTPwSXQ3A5w75bUOFU_6Vkuvhq_LVGUUK6nYog4HiMa4DjD1Bo5DS300VcOtN6SrIKlZROtSeMVuLWHaIM0EvyDFHyfeMCU5OjKZldYkCo6k-_flLrv8vTbbdR0nV04QSUl0XgUcq0eMAfiyWe_sdQ7RMESOURTaC4VdV1nFcyKR_S-WcnfAxvEKlEN4HcBEUPs6lp2R3o1TdNfM2lh8Ux11SIpFh_oZXD0ywZBPwNRjBvKTT-UzNGNuHrVHgBwGCu9Gp8SNtykfoU0IdbnnNzUkg
+
+# {
+#     "user_id": "id40fc6eb52385d502980b9430a450e9950aed",
+#     "email":"s2hathanhtuan2s@gmail.com",
+#     "password": "123456789",
+#     "token":{
+#         "publicKey":"-----BEGIN RSA PUBLIC KEY-----\nMIIBCgKCAQEA2o9Li7FoU2u1SOLWf1gTUzFX3IZztchnBb9wH/Z9diLwQeIk0VIs\nxYiV9yb94bUXmNr8fRvxCRcK9tbQKrtJILc/+JXmtlj94aFlailcfNT1v6DwjqMq\nmI88eKQ/+IbiF1D2sBuP4DrFUtJPWa0HADZN3LROgv2lyDek6Fi74yeC2L6n1bvq\njll6LXn2GSxSI3/72tmmLV9nSCxOK2DlX1c9ZoysSR9NavvQVIVh6RHpMH8mEY0H\nxrSSz3SlPVmHl5d4rAW3TEGNk3nZVgoxIm/nGEjiunTJY4i/XmmFqhlg9ICyjd7H\nB1U6OzG9TVXTxIvUhtgVn7CUMxSF0MUYxwIDAQAB\n-----END RSA PUBLIC KEY-----\n",
+#         "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQwZmM2ZWI1MjM4NWQ1MDI5ODBiOTQzMGE0NTBlOTk1MGFlZCIsIm5hbWUiOiJIYSBUaGFuaCBUdWFuIiwiZW1haWwiOiJzMmhhdGhhbmh0dWFuMnNAZ21haWwuY29tIiwicm9sZV9pZCI6MCwiaWF0IjoxNjg4MTExMjkxLCJleHAiOjE2ODg3MTYwOTF9.aIXCAh-12FG_dBVGPPDwVW__2Sk19inDfIYZMZZqQ0o"
+#     }
+# }
+
+
+###
+PATCH  http://localhost:3009/user/forgetPassword
+Content-Type: application/json
+# Authorization:Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOGFmNzI1ZjY3NTEyYjk2YjBjOWY2MDIyZWM0YmFkNmI3ZCIsIm5hbWUiOiJIYSBUaGFuaCBUdWFuIiwiZW1haWwiOiJoYXRoYW5odHVhbjEyMy5jb20iLCJyb2xlX2lkIjowLCJpYXQiOjE2ODcwMjk1NjQsImV4cCI6MTY4NzAzNjc2NH0.jEZUJodGICX4WEmkuOVCTQAJijXrZEekokNwQeKl1RmC5_mrBrU6mf5vBKsanyTPwSXQ3A5w75bUOFU_6Vkuvhq_LVGUUK6nYog4HiMa4DjD1Bo5DS300VcOtN6SrIKlZROtSeMVuLWHaIM0EvyDFHyfeMCU5OjKZldYkCo6k-_flLrv8vTbbdR0nV04QSUl0XgUcq0eMAfiyWe_sdQ7RMESOURTaC4VdV1nFcyKR_S-WcnfAxvEKlEN4HcBEUPs6lp2R3o1TdNfM2lh8Ux11SIpFh_oZXD0ywZBPwNRjBvKTT-UzNGNuHrVHgBwGCu9Gp8SNtykfoU0IdbnnNzUkg
+
+{
+    "email": "hathanhtuan123.com",
+    "password": "123456789"
+}
+
+PATCH  http://localhost:3009/user/forgetPassword
+Content-Type: application/json
+# Authorization:Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkOGFmNzI1ZjY3NTEyYjk2YjBjOWY2MDIyZWM0YmFkNmI3ZCIsIm5hbWUiOiJIYSBUaGFuaCBUdWFuIiwiZW1haWwiOiJoYXRoYW5odHVhbjEyMy5jb20iLCJyb2xlX2lkIjowLCJpYXQiOjE2ODcwMjk1NjQsImV4cCI6MTY4NzAzNjc2NH0.jEZUJodGICX4WEmkuOVCTQAJijXrZEekokNwQeKl1RmC5_mrBrU6mf5vBKsanyTPwSXQ3A5w75bUOFU_6Vkuvhq_LVGUUK6nYog4HiMa4DjD1Bo5DS300VcOtN6SrIKlZROtSeMVuLWHaIM0EvyDFHyfeMCU5OjKZldYkCo6k-_flLrv8vTbbdR0nV04QSUl0XgUcq0eMAfiyWe_sdQ7RMESOURTaC4VdV1nFcyKR_S-WcnfAxvEKlEN4HcBEUPs6lp2R3o1TdNfM2lh8Ux11SIpFh_oZXD0ywZBPwNRjBvKTT-UzNGNuHrVHgBwGCu9Gp8SNtykfoU0IdbnnNzUkg
+
+{
+    "email": "hathanhtuan123.com",
     "password": "123456789"
 }

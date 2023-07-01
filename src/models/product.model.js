@@ -1,4 +1,4 @@
-const connectDatabase =  require("./models/db.model")
+const connectDatabase =  require("./auth.model")
 
 class Product{
     constructor(){
@@ -8,6 +8,7 @@ class Product{
     getAllProduct(){
 
     }
+
     getProduct(){
       const qr=`SELECT JSON_OBJECT('id' ,id,'name' ,name,'price' ,price)FROM products`
       const productsQuery = 'SELECT id, name, price FROM products';
@@ -24,6 +25,10 @@ class Product{
         })
         })
 
+    }
+
+    addCatalog(){
+      const qr=``
     }
 }
 

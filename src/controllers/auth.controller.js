@@ -1,36 +1,20 @@
 
 const authService = require("../services/auth.service")
-const bcrypt = require('bcrypt');
-const { uid } =require ('uid');
-const saltRounds = 10;
-const checkfieldSignUp=()=>{
-    
-}
-
+const {OK, CREATED}=require("../core/sucess.response")
+const verifyJwt = require("../helpers/verifyJwt")
 class Auth {
     signUp=async(req, res,next)=>{
-        try {
-            console.log("start");
-            
-            bcrypt.hash(req.body.password, saltRounds, async(error, result)=>{
-                if(error){
-                    console.log('erorr')
-                }
-                else{
-                    console.log(result)
-                    res.status(200).json(await authService.signUp({...req.body, password:result,id:uid(36)}))
-                }
-            })
-            console.log(">auc Sign-up body ::: ",req.body);
-            
-            
-            
-        } catch (error) {
-            res.status(401).json({
-                code: 401,
-                message: "xxx",
-            })
-        }
+            const message = await authService.signUp(req.body)
+            new CREATED("Registered OK", message).send(res)
+    }
+
+    signIn=async(req, res, next)=>{
+            const dataReq=req.body
+            console.log(req.data)
+            const message=await authService.signIn(dataReq)
+        //     await verifyJwt(dataReq)
+            new OK("OK", message).send(res)
+
     }
 }
 
