@@ -1,0 +1,17 @@
+
+
+.UploadImage .ant-upload-list.ant-upload-list-picture {
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.upload-list-inline .ant-upload-list-item {
+    float: left;
+    width: 200px;
+    margin-inline-end: 8px;
+  }
+  
+  .ant-upload-rtl.upload-list-inline .ant-upload-list-item {
+    float: right;
+  }
+  
