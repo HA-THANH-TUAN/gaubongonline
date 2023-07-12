@@ -1,8 +1,8 @@
 import { Layout } from 'antd'
 import React from 'react'
 import { Routes, Route ,Outlet} from 'react-router-dom';
-import Product from '../../Pages/Product';
-import Home from '../../Pages/Home';
+import Product from '../../Pages/Product/Product';
+import Home from '../../Pages/Dashboard';
 import Shop from '../../Pages/Shop';
 
 

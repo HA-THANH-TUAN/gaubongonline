@@ -19,7 +19,7 @@ const Private:React.FC<IPrivate> = (props) => {
   return (
     <>  
         { 
-            isLogin ? 
+            true ? 
             <Layout style={layoutStyle}>
                 <SiderBar collapsed={collapsed}/>
                 <Layout>
