@@ -14,6 +14,7 @@ const layoutStyle: React.CSSProperties = {
 const Private:React.FC<IPrivate> = (props) => {
 
   const [collapsed, setCollapsed]=useState<boolean>(false)
+  const [isOpenDrawer, setIsOpenDrawer]=useState<boolean>(false)
 
   const isLogin =localStorage.getItem("isLogin")==="true"
   return (
@@ -21,9 +22,9 @@ const Private:React.FC<IPrivate> = (props) => {
         { 
             true ? 
             <Layout style={layoutStyle}>
-                <SiderBar collapsed={collapsed}/>
+                <SiderBar collapsed={collapsed} isOpenDrawer={isOpenDrawer}  handleSetDrawer={setIsOpenDrawer}/>
                 <Layout>
-                  <Header handleSetCollapsed ={setCollapsed} collapsed/>
+                  <Header handleSetCollapsed ={setCollapsed} handleSetDrawer={setIsOpenDrawer} collapsed/>
                   <main className='overflow-y-auto'>
                     <Outlet/>
                   </main>

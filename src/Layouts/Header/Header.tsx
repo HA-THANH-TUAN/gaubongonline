@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import {AiOutlineMenuFold,AiOutlineMenuUnfold} from "react-icons/ai"
 import { Layout, Button,theme,Avatar,Badge, Popover, List, Space, message } from 'antd'
 import {BsFillBellFill} from "react-icons/bs"
+import {TbMenu2} from "react-icons/tb"
 import {IoChatbox} from "react-icons/io5"
 import {HiShoppingCart} from "react-icons/hi"
 import { deleteCookie } from '../../Utils/setCookie'
@@ -10,6 +11,7 @@ import { useNavigate } from 'react-router-dom'
 interface IPHeader {
   collapsed: boolean
   handleSetCollapsed : React.Dispatch<React.SetStateAction<boolean>>
+  handleSetDrawer : React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const styleSiderBar={
@@ -18,7 +20,7 @@ const styleSiderBar={
   justifyContent:"space-between"
 }
 
-const Header:React.FC<IPHeader> = ({handleSetCollapsed, collapsed}) => {
+const Header:React.FC<IPHeader> = ({handleSetCollapsed, collapsed,handleSetDrawer}) => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -64,16 +66,32 @@ const Header:React.FC<IPHeader> = ({handleSetCollapsed, collapsed}) => {
   return (
     <Layout.Header style={{backgroundColor:colorBgContainer,...styleSiderBar}}>
       {contextHolder}
-      <Button
-        type="text"
-        icon={collapsed ? <AiOutlineMenuUnfold /> : <AiOutlineMenuFold />}
-        onClick={()=>{handleSetCollapsed((state)=>(!state))}}
-        style={{
-          fontSize: '16px',
-          width: 64,
-          height: 64,
-        }}
-      />
+      <Space>
+        <Space.Compact className='md:block hidden '>
+          <Button
+            type="text"
+            icon={collapsed ? <AiOutlineMenuUnfold /> : <AiOutlineMenuFold />}
+            onClick={()=>{handleSetCollapsed((state)=>(!state))}}
+            style={{
+              fontSize: '16px',
+              width: 64,
+              height: 64,
+            }}/>
+
+        </Space.Compact>
+        <Space.Compact className='md:hidden block'>
+          <Button
+            type="text"
+            icon={<TbMenu2/>}
+            onClick={()=>{handleSetDrawer((state)=>(!state))}}
+            style={{
+              fontSize: '16px',
+              width: 64,
+              height: 64,
+            }}/>
+
+        </Space.Compact>
+      </Space>
       <Space size={40} style={{margin:"0 30px"}}>
         <Popover className='flex items-items hover:cursor-pointer hover:opacity-70' content="notifys" title="Title">
           <Badge count={5}>
