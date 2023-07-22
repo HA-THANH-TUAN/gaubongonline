@@ -14,7 +14,6 @@ class Auth {
             const message=await authService.signIn(dataReq)
         //     await verifyJwt(dataReq)
             new OK("OK", message).send(res)
-
     }
 }
 

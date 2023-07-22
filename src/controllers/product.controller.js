@@ -27,10 +27,11 @@ const dataCheckAddCatalog={
 
     }
 }
+
 class Product {
     addCatalog=async(req, res, next)=>{
         const dataReq=req.body
-        console.log("controller prodcut:::",req)
+        console.log("controller prodcut:::",req.body)
         // const isValidate= validateField(dataCheckAddCatalog ,dataReq)
         const isValidate=true
         // console.log("isValidate:::",isValidate)

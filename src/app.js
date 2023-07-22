@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const multer=require("multer")
 const app = express()
 const path = require('path');
 const routerUser = require('./routes/api/user.route');
@@ -8,8 +9,8 @@ const routerRedis = require('./routes/api/test.route')
 const routerAdminProduct= require("./routes/api/admin/admin.product.route")
 const cors=require("./middleware/cors")
 const jwt=require("jsonwebtoken")
-// const {uploadCloud,cloudinary} = require('./config/cloudinary.config');
-// const { urlencodedParser } = require('./middleware/bodyParser');
+const {uploadCloud,cloudinary} = require('./config/cloudinary.config');
+ 
 app.use('/static', express.static(path.join(__dirname, '../public')))
 
 //====> middleware
@@ -20,13 +21,47 @@ app.use(cors({
   "optionsSuccessStatus": 204 
 }))
 
-
-
-app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json()); 
+app.use(bodyParser.urlencoded({extended:false}));
 app.use("/authentication",routerAuth)
 app.use("/user",routerUser)
 app.use("/admin",routerAdminProduct )
+
+
+const uploadFormData = multer();
+
+app.post('/test-upload',uploadFormData.fields([{name:"images2"},{name:"images"}]) ,async(req, res, next) => {
+  
+  console.log("request file", req.files)
+  console.log("request body", req.body)
+  
+  // Access the uploaded image file via req.file
+  // const { filename, path } = req.file;
+  // console.log("all data File:::", req.file)
+  // console.log('Image uploaded:', filename);
+  // console.log('Image path:', path);
+  // console.log("_____________________________")
+
+  //  const upload =()=>{
+  //       return new Promise((okay, fail)=>{
+  //         cloudinary.uploader.upload(path,{filename_override:`hathanhtuan_${filename}`},(error,result )=>{
+  //           error  ? fail(error) : okay(result)
+  //         })
+  //       })
+  //     }
+  //     const data= await upload()
+      res.json({
+        message: "Oke"
+      })
+
+});
+
+
+
+
+
+
+
 
 app.use((req, res, next)=>{
   const error=new Error("Not Found")
@@ -48,15 +83,6 @@ app.use((error, req, res, next)=>{
 // app.use("/redis",routerRedis)
 
 
-
-
-// const token=jwt.sign({name:"Ha Thanh Tuan", age: "20"}, secretKey, { expiresIn: 60,algorithm:'RS256'})
-// console.log("token:::",token)
-
-// jwt.verify(token,publicKey,(error, result)=>{
-//   console.log("err:::",error)
-//   console.log("oke:::",result)
-// })
 // console.log("end:::")
 // app.delete("/upload/image",(req, res)=>{
 //   cloudinary.uploader.destroy("gaubongonline/k1y1umoh41lysxei0icz", (error, result) => {
@@ -68,6 +94,8 @@ app.use((error, req, res, next)=>{
 //       return res.json(result)
 //     }
 //   })
+ 
+
  
 // })
 // app.put("/upload/image",(req, res)=>{
@@ -83,16 +111,7 @@ app.use((error, req, res, next)=>{
  
 // })
 
-// const connectD = async()=>{
-//   console.log(">>>> sau await");
-//   connectDatabase.query("SELECT * FROM products", function(err, rows) {
-//     console.log("error:::", err);
-//     console.log("data:::", rows);
-//   })
-// }
-// connectD()
 
-// console.log(connectDatabase)
 
 
 

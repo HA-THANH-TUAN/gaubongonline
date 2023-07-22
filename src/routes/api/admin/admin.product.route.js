@@ -7,7 +7,7 @@ router.get("/products",(req,res, next)=>{
     res.json("Res ROuter")
 
 })
-router.post("/add-catalog", asyncHandler(addCatalogController.addCatalog)) 
+router.post("/addCatalog", asyncHandler(addCatalogController.addCatalog)) 
 
 
 
